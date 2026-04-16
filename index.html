@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Butterfly — SparkJS</title>
+  <title>3D Fireplace — SparkJS</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: transparent; overflow: hidden; }
@@ -18,7 +18,7 @@
   </style>
 </head>
 <body>
-  <div id="loading">Loading butterfly…</div>
+  <div id="loading">Loading fireplace…</div>
 
   <script type="importmap">
     {
@@ -61,16 +61,14 @@
     controls.dampingFactor = 0.1;
     controls.target.set(0, 0, 0);
 
-    // Load the butterfly splat
-    const butterfly = new SplatMesh({
-      url: "https://sparkjs.dev/assets/splats/butterfly.spz",
+    // Load the fireplace splat
+    const fireplace = new SplatMesh({
+      url: "https://sparkjs.dev/assets/splats/fireplace.spz",
       onLoad: () => {
         document.getElementById("loading").classList.add("hidden");
       },
     });
-    // Set upright — splats often come in with flipped axes
-    butterfly.quaternion.set(1, 0, 0, 0);
-    scene.add(butterfly);
+    scene.add(fireplace);
 
     // Handle resize
     window.addEventListener("resize", () => {
